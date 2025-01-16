@@ -1,1 +1,17 @@
-[{"name":"itgel","seat":28}]
+[
+    {
+        "name": "naka",
+        "seat": 34,
+        "id": "a1"
+    },
+    {
+        "name": "sorko",
+        "age": 28,
+        "id": "a2"
+    },
+    {
+        "name": "ideree",
+        "age": 25,
+        "id": "a3"
+    }
+]

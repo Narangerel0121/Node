@@ -75,27 +75,37 @@
 // }
 // deleteStudent("23")
 
+// import fs from 'fs'
+// function readStudent() {
+// const json = fs.readFileSync('student.json', 'utf-8');
+// const data = JSON.parse(json);
+// console.log(data)
+// }
+// readStudent()
+
+// import fs from 'fs'
+// function updateStudent() {
+// const json = fs.readFileSync('student.json', 'utf-8');
+// const data = JSON.parse(json);
+// data[0] = { name: 'naka', seat: 34}
+// data[1].name = 'sorko'
+// fs.writeFileSync('student.json', JSON.stringify(data))
+// console.log(data)
+// }
+// updateStudent()
+
 import fs from 'fs'
-function readStudent() {
+function updateStudent(id, student) {
 const json = fs.readFileSync('student.json', 'utf-8');
 const data = JSON.parse(json);
+ for(let i = 0; i < student.lenght; i++){
+if(data[i].id == id){
+    data[i] = { ...data[i], ...student };
+}
+ } ;
 fs.writeFileSync('student.json', JSON.stringify(data))
-console.log(data)
 }
-readStudent()
-
-import fs from 'fs'
-function updateStudent(name) {
-const json = fs.readFileSync('student.json', 'utf-8');
-const data = JSON.parse(json);
-const filteredData = data.filter(function(student){
-    return student.name == name
-});
-
-fs.writeFileSync('student.json', JSON.stringify(filteredData))
-console.log(filteredData)
-}
-updateStudent("itgel")
+updateStudent("a1", {name: 'soroo', seat: 20})
 
 
 
